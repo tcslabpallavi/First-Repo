@@ -1,4 +1,4 @@
-name: Hello world pipeline 2
+name: Manual trigger pipeline
 on:
   workflow_dispatch:
   push:
