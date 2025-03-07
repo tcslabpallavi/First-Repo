@@ -1,0 +1,21 @@
+name: Hello world pipeline 2
+on:
+  workflow_dispatch:
+  push:
+    branches:
+    - main
+jobs:
+  hello:
+    name: print hello   # job name
+    runs-on: ubuntu-latest
+    steps:
+      - name: check out the code
+        uses: actions/checkout@v4
+      - name: say hello to all
+        run: echo "Hello"
+      - name: this is literal block
+        run: |
+          echo "----- pwd----"
+          pwd
+          echo "----list dir ----"
+          ls -lthr
