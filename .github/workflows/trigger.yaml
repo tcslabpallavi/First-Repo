@@ -12,7 +12,7 @@ jobs:
       - name: check out the code
         uses: actions/checkout@v4
       - name: say hello to all
-        run: echo "Hello"
+        run: echo "Hello" >> file.txt
       - name: this is literal block
         run: |
           echo "----- pwd----"
