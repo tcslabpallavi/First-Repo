@@ -1,9 +1,6 @@
 name: Manual trigger pipeline
 on:
   workflow_dispatch:
-  push:
-    branches:
-    - main
 jobs:
   hello:
     name: print hello   # job name
