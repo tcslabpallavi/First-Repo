@@ -18,7 +18,7 @@ jobs:
     name: greeting   
     runs-on: ubuntu-latest 
     env:
-      NAME: "Manu"  # local variable available to this job only 
+      NAME: "Pallavi"  # local variable available to this job only 
     steps:
       - name: check out the code
         uses: actions/checkout@v4
@@ -27,7 +27,7 @@ jobs:
   greeting:
     name: greeting hello  
     env: 
-      NAME: "KRISHNA"  # local variable available to this job only 
+      NAME: "vaishnavi"  # local variable available to this job only 
     runs-on: ubuntu-latest 
     steps:
       - name: Greet a user
