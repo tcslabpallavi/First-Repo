@@ -1,0 +1,34 @@
+name: Practice inputs
+on:
+  workflow_dispatch:
+    inputs:
+      k8s_cluster:
+        default: "dev"
+        description: select the env options
+        type: choice
+        options:
+          - dev
+          - sit
+          - uat
+          - prod
+env:
+  k8s_cluster: ${{ inputs.k8s_cluster }}  # global variable available to all jobs
+jobs:
+  hello:
+    name: greeting   
+    runs-on: ubuntu-latest 
+    env:
+      NAME: "Manu"  # local variable available to this job only 
+    steps:
+      - name: check out the code
+        uses: actions/checkout@v4
+      - name: Greet a user
+        run: echo "Hello $NAME! this is my $TRAINING training"
+  greeting:
+    name: greeting hello  
+    env: 
+      NAME: "KRISHNA"  # local variable available to this job only 
+    runs-on: ubuntu-latest 
+    steps:
+      - name: Greet a user
+        run: echo "Hello $NAME! this is my $TRAINING training" 
