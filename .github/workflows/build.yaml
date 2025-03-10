@@ -1,4 +1,4 @@
-name: Build pipeline
+name: PR Closed
 on:
   pull_request: 
     types: 
