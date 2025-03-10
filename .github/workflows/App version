@@ -1,0 +1,22 @@
+name: Display java and app version 
+on:
+  workflow_dispatch:
+env:
+  JAVA_VERSION: 17  # global variable available to all jobs
+jobs:
+  Build:
+    name: Display java version   
+    runs-on: ubuntu-latest 
+    steps:
+      - name: check out the code
+        uses: actions/checkout@v4
+      - name: Display java version
+        run: echo "Java version is $JAVA_VERSION"
+  Deployments:
+    name: Display docker app version  
+    env: 
+      APP_VERSION: 1.31  # local variable available to this job only 
+    runs-on: ubuntu-latest 
+    steps:
+      - name: Display app version
+        run: echo "Docker app version is $APP_VERSION" 
