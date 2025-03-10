@@ -1,0 +1,15 @@
+name: Build pipeline
+on:
+  pull_request: 
+    types: 
+      - closed
+jobs:
+  lint:
+    name: build pipeline    # job name
+    runs-on: ubuntu-latest # the githgub agent/runner where job steps will run/execute
+    steps:
+      - name: check out the code
+        uses: actions/checkout@v4
+      - name: syntax check
+        run: echo "build is done!"
+ 
