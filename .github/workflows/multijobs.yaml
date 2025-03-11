@@ -1,0 +1,30 @@
+name: multi job
+on: workflow_dispatch
+jobs:
+  build:
+    name: building
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        run: echo "This is my 1st job"
+  test:
+    name: building1
+    needs: [ build ]
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        run: echo "This is my 2nd job"
+  testdeploy:
+    name: building2
+    needs: [ test ]
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        run: echo "This is my 3rd job"
+  devdeploy:
+    name: building3
+    needs: [ testdeploy ]
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        run: echo "This is my 4th job"
