@@ -9,7 +9,7 @@ permissions:
 jobs:
   my_job:
     name: deploy to staging
-    runs-on: ubantu:latest
+    runs-on: ubantu-latest
     steps:
       - name: Git clone the repository
         uses: actions/checkout@v3
